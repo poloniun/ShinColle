@@ -6,6 +6,7 @@ Shin Colle
 这样您就可以无需自己编译，只需要跳转到https://github.com/misaka10843/ShinColle/actions 点击最新的构建下载即可qwq
 
 ==========
+
 Shinkeiseikan Collection
 
 --------------------------------------------------------------
