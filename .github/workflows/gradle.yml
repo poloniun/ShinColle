@@ -14,7 +14,7 @@ on:
     branches: [ mc-1.12.2 ]
 
 jobs:
-  build:
+  build-and-update:
 
     runs-on: windows-latest
 
@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: test
+        name: ShinColle
         path: ${{ github.workspace }}/build/libs
