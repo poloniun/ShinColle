@@ -34,4 +34,4 @@ jobs:
       if: always()
       with:
         name: test
-        path: ${{ github.workspace }}/advanced-achievements-plugin/target/
+        path: ${{ github.workspace }}/build/libs
