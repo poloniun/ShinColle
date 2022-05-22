@@ -347,8 +347,8 @@ public class EntityAIShipGuarding extends EntityAIBase
 	//find target
 	private void findTarget()
 	{
-		AxisAlignedBB fireRange = this.host2.getEntityBoundingBox().expand(this.range * 0.9D, this.range * 0.6D, this.range * 0.9D);
-		fireRange =  fireRange.expand(this.range * -0.9D, this.range * -0.6D, this.range * -0.9D);
+		AxisAlignedBB fireRange = this.host2.getEntityBoundingBox().grow(this.range * 0.9D, this.range * 0.6D, this.range * 0.9D);
+		fireRange =  fireRange.grow(this.range * -0.9D, this.range * -0.6D, this.range * -0.9D);
 		List<EntityLivingBase> list1 = this.host2.world.getEntitiesWithinAABB(EntityLivingBase.class, fireRange, this.targetSelector);
 		String str = "";
 		for(EntityLivingBase i : list1){
