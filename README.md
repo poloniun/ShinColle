@@ -27,6 +27,7 @@
 
 并且发现问题后在[这里](https://github.com/misaka10843/ShinColle/pull/3)进行相关留言
 
+如果出现错误，可以直接切换到[发行版](https://github.com/misaka10843/ShinColle/releases/latest)
 
 ## Shinkeiseikan Collection
 
