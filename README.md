@@ -23,7 +23,7 @@
 
 如果您想提供信息给我们，
 
-请使用最新的**预发行版**，
+请使用最新的**预发行版**（ [这里](https://github.com/misaka10843/ShinColle/releases/tag/2022.5.22-1) ），
 
 并且发现问题后在[这里](https://github.com/misaka10843/ShinColle/pull/3)进行相关留言
 
