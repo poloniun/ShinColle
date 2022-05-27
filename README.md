@@ -6,6 +6,8 @@
 
 如果怕不稳定，您可以点击https://github.com/misaka10843/ShinColle/releases 下载最新版即可qwq
 
+如果遇见了bug，还请您在[issue](https://github.com/misaka10843/ShinColle/issues)中提交信息，但是因为本人为mc mod小白，所以可能并不会修复，还请您等待大佬进行修复qwq
+
 ## 预发布版的问题测试情况 
 
 |问题|通过状态|测试端|备注|
