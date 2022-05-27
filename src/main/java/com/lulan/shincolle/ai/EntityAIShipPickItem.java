@@ -6,7 +6,6 @@ import com.lulan.shincolle.entity.IShipEmotion;
 import com.lulan.shincolle.handler.ConfigHandler;
 import com.lulan.shincolle.reference.ID;
 import com.lulan.shincolle.utility.TargetHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -28,7 +27,7 @@ public class EntityAIShipPickItem extends EntityAIBase
     private BasicEntityShip hostShip;
     private BasicEntityMount hostMount;
     private EntityLivingBase hostLiving;
-    private Entity entItem;
+    private EntityItem entItem;
     private int pickDelay, pickDelayMax;
     private float pickRange, pickRangeBase;
     
@@ -130,8 +129,8 @@ public class EntityAIShipPickItem extends EntityAIBase
     		}//end every 16 ticks
 			
     		//pick up nearby item
-    		if (this.pickDelay <= 0 && this.entItem != null)
-    		{
+    		if (this.pickDelay <= 0 && this.entItem != null && !this.entItem.isDead)
+				{
     			this.pickDelay = this.pickDelayMax;
     			
     			//get item if close to 9D (3 blocks)
@@ -139,11 +138,10 @@ public class EntityAIShipPickItem extends EntityAIBase
     				(this.hostShip != null && this.hostShip.getDistanceSq(this.entItem) < 9D))
     			{
     				//add item to inventory
-    				EntityItem entitem = (EntityItem) this.entItem;
-    				ItemStack itemstack = entitem.getItem();
+    				ItemStack itemstack = entItem.getItem();
     				int i = itemstack.getCount();
     				
-    				if (!entitem.cannotPickup() &&
+    				if (!entItem.cannotPickup() &&
     					this.hostShip.getCapaShipInventory().addItemStackToInventory(itemstack))
     				{
     					//play pick item sound
@@ -159,7 +157,7 @@ public class EntityAIShipPickItem extends EntityAIBase
             			}
         				
     					//send item pickup sync packet
-    					this.hostShip.onItemPickup(entitem, i);
+    					this.hostShip.onItemPickup(entItem, i);
     					
     					//send attack time packet
     					this.hostShip.applyParticleAtAttacker(0, null, null);
@@ -170,7 +168,7 @@ public class EntityAIShipPickItem extends EntityAIBase
     					//clear entity item if no leftover item
     	                if (itemstack.getCount() <= 0)
     	                {
-    	                	entitem.setDead();
+    	                	entItem.setDead();
     	                	this.entItem = null;
     	                }
     				}
