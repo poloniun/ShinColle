@@ -8,10 +8,12 @@
 name: Java CI with Gradle
 
 on:
+  workflow_dispatch:
   push:
     branches: [ mc-1.12.2 ]
     paths-ignore:
       - '*.md'
+      - '/.github/*'
   pull_request:
     branches: [ mc-1.12.2 ]
 
