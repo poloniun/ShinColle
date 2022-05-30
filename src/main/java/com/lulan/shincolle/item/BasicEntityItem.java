@@ -502,8 +502,8 @@ public class BasicEntityItem extends Entity
             if (this.delayBeforeCanPickup <= 0)
             {
                 //申明需要判断是否播放音效的变量
-                String pid1;
-                String pid2;
+                String pid1 = null;
+                String pid2 = null;
                 boolean NeedJudge = false;
                 //is OP
                 if (EntityHelper.checkOP(player))
