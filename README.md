@@ -2,13 +2,15 @@
 
 此仓库是复刻自 Cappycot/ShinColle后使用GitHub actions自动编译程序编译jar，顺便将其他仓库中的优化与修复添加于此 
 
-这样您就可以无需自己编译，只需要跳转到https://github.com/misaka10843/ShinColle/actions 点击最新的构建下载即可qwq
+这样您就可以无需自己编译，只需要跳转到[这里](https://github.com/misaka10843/ShinColle/actions)点击最新的构建下载即可qwq
 
-如果怕不稳定，您可以点击https://github.com/misaka10843/ShinColle/releases 下载最新版即可qwq
+如果怕不稳定，您可以点击[这里](https://github.com/misaka10843/ShinColle/releases)下载最新版即可qwq
 
 如果遇见了bug，还请您在[issue](https://github.com/misaka10843/ShinColle/issues)中提交信息，但是因为本人为mc mod小白，所以可能并不会修复，还请您等待大佬进行修复qwq
 
 如需要添加一些新的物品/舰娘，或者单纯想问问或者灌水，可以前往[discussions](https://github.com/misaka10843/ShinColle/discussions)！
+
+如需要体验原配的舰娘语音(虽然很多深海舰无法实装)，您可以在[这里](https://github.com/misaka10843/ShinColle/pull/8)，点击`检查->细节`即可下载到最新的语音版jar
 
 ## 预发布版的问题测试情况 
 
