@@ -474,7 +474,6 @@ public class BasicEntityItem extends Entity {
                                 }
                             }
                         }
-                    }
                     //ship egg w/o tag
                     else {
                         player.inventory.addItemStackToInventory(itemstack);
