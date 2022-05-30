@@ -556,10 +556,12 @@ public class BasicEntityItem extends Entity
                 }
             	
             	//play pick sound
-                if (!this.isSilent() && pid1.equals(pid2))
+                if (!this.isSilent())
                 {
-                    this.world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
-                }
+		    if(pid1.equals(pid2)){
+                        this.world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                    }
+		}
             }//end delay = 0
             
             if (itemstack.getCount() <= 0)
