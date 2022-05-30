@@ -34,74 +34,74 @@ import java.util.List;
  *  3. fire proof
  *  4. no clip
  *  5. can't be pushed
- * 
+ *
  */
 public class BasicEntityItem extends Entity
 {
-	
-	/** item of this entity */
+
+    /** item of this entity */
     private static final DataParameter<ItemStack> ITEM = EntityDataManager.<ItemStack>createKey(EntityItem.class, DataSerializers.ITEM_STACK);
     /** The age of this EntityItem (used to animate it up and down as well as expire it) */
     private int delayBeforeCanPickup;
     private String owner;  //TODO checking owner
-	
-	
-	public BasicEntityItem(World world)
-	{
-		super(world);
-		this.setSize(0.8F, 0.8F);
-	}
-	
-	public BasicEntityItem(World world, double x, double y, double z, ItemStack item)
-	{
-		this(world);
-		this.setPosition(x, y, z);
-		this.motionX = 0D;
-		this.motionY = 0D;
-		this.motionZ = 0D;
-		this.isImmuneToFire = true;
-		this.onGround = true;
-		this.noClip = false;
-		this.delayBeforeCanPickup = 10;
-		this.setEntityItemStack(item);
-		
-		//stop vanilla init
-		this.firstUpdate = false;
-	}
-	
-	//新增item data到data watcher中
-	@Override
+
+
+    public BasicEntityItem(World world)
+    {
+        super(world);
+        this.setSize(0.8F, 0.8F);
+    }
+
+    public BasicEntityItem(World world, double x, double y, double z, ItemStack item)
+    {
+        this(world);
+        this.setPosition(x, y, z);
+        this.motionX = 0D;
+        this.motionY = 0D;
+        this.motionZ = 0D;
+        this.isImmuneToFire = true;
+        this.onGround = true;
+        this.noClip = false;
+        this.delayBeforeCanPickup = 10;
+        this.setEntityItemStack(item);
+
+        //stop vanilla init
+        this.firstUpdate = false;
+    }
+
+    //新增item data到data watcher中
+    @Override
     protected void entityInit()
     {
         this.getDataManager().register(ITEM, ItemStack.EMPTY);
     }
-	
-	//此entity不會走動
-	@Override
+
+    //此entity不會走動
+    @Override
     protected boolean canTriggerWalking()
     {
         return false;
     }
-	
-	//can not damage this item
-	@Override
-	public boolean attackEntityFrom(DamageSource attacker, float dmg)
-	{
-		return false;
-	}
-	
-	@Override
+
+    //can not damage this item
+    @Override
+    public boolean attackEntityFrom(DamageSource attacker, float dmg)
+    {
+        return false;
+    }
+
+    @Override
     public boolean canBeAttackedWithItem()
     {
         return false;
     }
-	
-	@Override
-	public Entity changeDimension(int dimensionIn)
-	{
-		return null;
-	}
-	
+
+    @Override
+    public Entity changeDimension(int dimensionIn)
+    {
+        return null;
+    }
+
     public String getOwner()
     {
         return this.owner;
@@ -111,88 +111,88 @@ public class BasicEntityItem extends Entity
     {
         this.owner = owner;
     }
-	
-	//cancel motionY
-	@Override
+
+    //cancel motionY
+    @Override
     public void onUpdate()
     {
-		//client side
-		if (this.world.isRemote)
-		{
-			//play portal sound
-			if ((this.ticksExisted & 31) == 0 && rand.nextInt(3) == 0)
-	        {
-	            this.world.playSound(posX + 0.5D, posY + 0.5D, posZ + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
-	        }
-		}
-		//server side
-		else
-		{
-			//despawn ship mob egg
-			if (this.ticksExisted > ConfigHandler.despawnEgg)
-			{
-				ItemStack stack = this.getEntityItem();
-				
-				if (!stack.hasTagCompound())
-				{
-					this.setDead();
-				}
-			}
-		}
-		
-		this.setPosition(posX, posY, posZ);
-		
-		if(this.getEntityItem().isEmpty())
-		{
-			this.setDead();
-		}
-		else
-		{
-			//stop motion
-			this.prevPosX = this.posX;
-			this.prevPosY = this.posY;
-			this.prevPosZ = this.posZ;
-			this.motionX *= 0.5D;
-			this.motionY *= 0.5D;
-			this.motionZ *= 0.5D;
-			this.noClip = this.pushOutOfBlocks(this.posX, (this.getEntityBoundingBox().minY + this.getEntityBoundingBox().maxY) / 2.0D, this.posZ);
-            this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
-            
-			//check item
-			ItemStack item = this.getEntityItem();
-  
-			if (!item.isEmpty() && item.getCount() <= 0)
-			{
-				this.setDead();
-			}
-		}
+        //client side
+        if (this.world.isRemote)
+        {
+            //play portal sound
+            if ((this.ticksExisted & 31) == 0 && rand.nextInt(3) == 0)
+            {
+                this.world.playSound(posX + 0.5D, posY + 0.5D, posZ + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+            }
+        }
+        //server side
+        else
+        {
+            //despawn ship mob egg
+            if (this.ticksExisted > ConfigHandler.despawnEgg)
+            {
+                ItemStack stack = this.getEntityItem();
 
-		//pick delay --
+                if (!stack.hasTagCompound())
+                {
+                    this.setDead();
+                }
+            }
+        }
+
+        this.setPosition(posX, posY, posZ);
+
+        if(this.getEntityItem().isEmpty())
+        {
+            this.setDead();
+        }
+        else
+        {
+            //stop motion
+            this.prevPosX = this.posX;
+            this.prevPosY = this.posY;
+            this.prevPosZ = this.posZ;
+            this.motionX *= 0.5D;
+            this.motionY *= 0.5D;
+            this.motionZ *= 0.5D;
+            this.noClip = this.pushOutOfBlocks(this.posX, (this.getEntityBoundingBox().minY + this.getEntityBoundingBox().maxY) / 2.0D, this.posZ);
+            this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+            //check item
+            ItemStack item = this.getEntityItem();
+
+            if (!item.isEmpty() && item.getCount() <= 0)
+            {
+                this.setDead();
+            }
+        }
+
+        //pick delay --
         if (this.delayBeforeCanPickup > 0)
         {
             --this.delayBeforeCanPickup;
         }
     }
-	
-	//immune to fire and lava
-	@Override
-	protected void dealFireDamage(int fire) {}
-	
-	@Override
-	public void setFire(int time) {}
-	
-	@Override
-	protected void setOnFireFromLava() {}
 
-	@Override
-	public boolean handleWaterMovement()
-	{
-		return false;
-	}
-	
-	@Override
-	public void move(MoverType type, double x, double y, double z)
-	{
+    //immune to fire and lava
+    @Override
+    protected void dealFireDamage(int fire) {}
+
+    @Override
+    public void setFire(int time) {}
+
+    @Override
+    protected void setOnFireFromLava() {}
+
+    @Override
+    public boolean handleWaterMovement()
+    {
+        return false;
+    }
+
+    @Override
+    public void move(MoverType type, double x, double y, double z)
+    {
         this.world.profiler.startSection("move");
         double d0 = this.posX;
         double d1 = this.posY;
@@ -400,7 +400,7 @@ public class BasicEntityItem extends Entity
         }
 
         this.world.profiler.endSection();
-        
+
         //rest motion
         this.world.profiler.startSection("rest");
         this.resetPositionToBB();
@@ -412,10 +412,10 @@ public class BasicEntityItem extends Entity
         {
             this.motionX = 0D;
         }
-        
+
         if (d4 != y)
         {
-        	this.motionY = 0D;
+            this.motionY = 0D;
         }
 
         if (d5 != z)
@@ -425,36 +425,36 @@ public class BasicEntityItem extends Entity
 
         this.world.profiler.endSection();
 
-	}
-	
-	@Override
-	protected void updateFallState(double y, boolean onGroundIn, IBlockState state, BlockPos pos) {}
-	
-	@Override
-	public void fall(float distance, float damageMultiplier) {}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
+    }
+
+    @Override
+    protected void updateFallState(double y, boolean onGroundIn, IBlockState state, BlockPos pos) {}
+
+    @Override
+    public void fall(float distance, float damageMultiplier) {}
+
+    @Override
+    @SideOnly(Side.CLIENT)
     public boolean canRenderOnFire()
-	{
+    {
         return false;
     }
-	
-	@Override
-	public boolean shouldRenderInPass(int pass)
-	{
+
+    @Override
+    public boolean shouldRenderInPass(int pass)
+    {
         return true;
     }
-	
-	@Override
-	public boolean isInvisible()
-	{
-		return false;
-	}
-	
-	@Override
-	public void setInvisible(boolean par1) {}
-	
+
+    @Override
+    public boolean isInvisible()
+    {
+        return false;
+    }
+
+    @Override
+    public void setInvisible(boolean par1) {}
+
     /**
      * Returns the ItemStack corresponding to the Entity (Note: if no item exists, will log an error but still return an
      * ItemStack containing Block.stone)
@@ -481,135 +481,143 @@ public class BasicEntityItem extends Entity
         this.getDataManager().set(ITEM, stack);
         this.getDataManager().setDirty(ITEM);
     }
-	
-	/**
+
+    /**
      * Called by a player entity when they collide with an entity
      */
-	@Override
+    @Override
     public void onCollideWithPlayer(EntityPlayer player)
-	{
+    {
         if(!this.world.isRemote && !this.isDead)
         {
-        	//check delay
-        	if (this.delayBeforeCanPickup > 0) return;
-        	
-        	//get item
-        	EntityTracker entitytracker = ((WorldServer)this.world).getEntityTracker();
+            //check delay
+            if (this.delayBeforeCanPickup > 0) return;
+
+            //get item
+            EntityTracker entitytracker = ((WorldServer)this.world).getEntityTracker();
             ItemStack itemstack = this.getEntityItem();
             int i = itemstack.getCount();
-            
+
             //if can pick
             if (this.delayBeforeCanPickup <= 0)
             {
+                //申明需要判断是否播放音效的变量
+                String pid1 = null;
+                String pid2 = null;
+                boolean NeedJudge = false;
                 //is OP
                 if (EntityHelper.checkOP(player))
                 {
-                	player.inventory.addItemStackToInventory(itemstack);
+                    player.inventory.addItemStackToInventory(itemstack);
                 }
                 //not OP
                 else
                 {
-                	//ship spawn egg = owner pick only
+                    //ship spawn egg = owner pick only
                     if (itemstack.getItem() == ModItems.ShipSpawnEgg)
                     {
-                    	NBTTagCompound nbt = itemstack.getTagCompound();
-                    	
-                    	//ship egg with tag
-                    	if (nbt != null)
-                    	{
-                    		String pid1 = nbt.getString("ownername");
-                    		String pid2 = player.getName();
-                    		
-                    		//check player UID
-                    		//if no owner name
-                    		if (pid1 == null || pid1.length() <= 1)
-                    		{
-                    			//ship's player UID isn't inited (for ship before 1.7.10.rv22)
-                    			//check player UUID
-                    			String uuid1 = nbt.getString("owner");
-                    			String uuid2 = player.getUniqueID().toString();
-                    			
-                    			if (uuid2.equals(uuid1))
-                    			{
-                    				player.inventory.addItemStackToInventory(itemstack);
-                    			}
-                    		}
-                    		else
-                    		{
-                    			if (pid1.equals(pid2))
-                    			{
-                    				player.inventory.addItemStackToInventory(itemstack);
-                    			}
-                    		}
-                    	}
-                    	//ship egg w/o tag
-                    	else
-                    	{
-                    		player.inventory.addItemStackToInventory(itemstack);
-                    	}
+                        NBTTagCompound nbt = itemstack.getTagCompound();
+
+                        //ship egg with tag
+                        if (nbt != null)
+                        {
+                            pid1 = nbt.getString("ownername");
+                            pid2 = player.getName();
+
+                            //check player UID
+                            //if no owner name
+                            if (pid1 == null || pid1.length() <= 1)
+                            {
+                                //ship's player UID isn't inited (for ship before 1.7.10.rv22)
+                                //check player UUID
+                                String uuid1 = nbt.getString("owner");
+                                String uuid2 = player.getUniqueID().toString();
+
+                                if (uuid2.equals(uuid1))
+                                {
+                                    player.inventory.addItemStackToInventory(itemstack);
+                                }
+                            }
+                            else
+                            {
+                                //需要判断是否为所有者
+                                NeedJudge = true;
+                                if (pid1.equals(pid2))
+                                {
+                                    player.inventory.addItemStackToInventory(itemstack);
+                                }
+                            }
+                        }
+                        //ship egg w/o tag
+                        else
+                        {
+                            player.inventory.addItemStackToInventory(itemstack);
+                        }
                     }
                     //not ship spawn egg
                     else
                     {
-                    	player.inventory.addItemStackToInventory(itemstack);
+                        player.inventory.addItemStackToInventory(itemstack);
                     }
                 }
-            	
-            	//play pick sound
-                if (!this.isSilent())
+
+                //play pick sound
+                if (!this.isSilent() && !NeedJudge)
                 {
                     this.world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                } else if (!this.isSilent() && pid1.equals(pid2)) {
+                    this.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                }//end delay = 0
+
+                if (itemstack.getCount() <= 0)
+                {
+                    this.setDead();
                 }
-            }//end delay = 0
-            
-            if (itemstack.getCount() <= 0)
+              }
+            }//end server side
+        }
+
+        @Override
+        protected void readEntityFromNBT(NBTTagCompound nbt)
+        {
+            NBTTagCompound itemtag = nbt.getCompoundTag("Item");
+            this.setEntityItemStack(new ItemStack(itemtag));
+
+            ItemStack item = this.getDataManager().get(ITEM);
+
+            if(item.isEmpty() || item.getCount() <= 0)
             {
                 this.setDead();
             }
-        }//end server side
+
+            if (nbt.hasKey("PickupDelay"))
+            {
+                this.delayBeforeCanPickup = nbt.getShort("PickupDelay");
+            }
+
+            if (nbt.hasKey("Owner"))
+            {
+                this.owner = nbt.getString("Owner");
+            }
+
+        }
+
+        @Override
+        protected void writeEntityToNBT(NBTTagCompound nbt)
+        {
+            if (!this.getEntityItem().isEmpty())
+            {
+                nbt.setTag("Item", this.getEntityItem().writeToNBT(new NBTTagCompound()));
+            }
+
+            if (this.getOwner() != null)
+            {
+                nbt.setString("Owner", this.owner);
+            }
+
+            nbt.setShort("PickupDelay", (short)this.delayBeforeCanPickup);
+
+        }
+
+
     }
-
-	@Override
-	protected void readEntityFromNBT(NBTTagCompound nbt)
-	{
-        NBTTagCompound itemtag = nbt.getCompoundTag("Item");
-        this.setEntityItemStack(new ItemStack(itemtag));
-
-        ItemStack item = this.getDataManager().get(ITEM);
-
-        if(item.isEmpty() || item.getCount() <= 0)
-        {
-            this.setDead();
-        }
-        
-        if (nbt.hasKey("PickupDelay"))
-        {
-            this.delayBeforeCanPickup = nbt.getShort("PickupDelay");
-        }
-
-        if (nbt.hasKey("Owner"))
-        {
-            this.owner = nbt.getString("Owner");
-        }
-
-	}
-
-	@Override
-	protected void writeEntityToNBT(NBTTagCompound nbt)
-	{
-        if (!this.getEntityItem().isEmpty())
-        {
-            nbt.setTag("Item", this.getEntityItem().writeToNBT(new NBTTagCompound()));
-        }
-        
-        if (this.getOwner() != null)
-        {
-        	nbt.setString("Owner", this.owner);
-        }
-        
-        nbt.setShort("PickupDelay", (short)this.delayBeforeCanPickup);
-
-	}
-	
-	
-}

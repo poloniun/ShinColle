@@ -2,23 +2,29 @@
 
 此仓库是复刻自 Cappycot/ShinColle后使用GitHub actions自动编译程序编译jar，顺便将其他仓库中的优化与修复添加于此 
 
-这样您就可以无需自己编译，只需要跳转到https://github.com/misaka10843/ShinColle/actions 点击最新的构建下载即可qwq
+这样您就可以无需自己编译，只需要跳转到[这里](https://github.com/misaka10843/ShinColle/actions)点击最新的构建下载即可qwq
 
-如果怕不稳定，您可以点击https://github.com/misaka10843/ShinColle/releases 下载最新版即可qwq
+如果怕不稳定，您可以点击[这里](https://github.com/misaka10843/ShinColle/releases)下载最新版即可qwq
 
 如果遇见了bug，还请您在[issue](https://github.com/misaka10843/ShinColle/issues)中提交信息，但是因为本人为mc mod小白，所以可能并不会修复，还请您等待大佬进行修复qwq
 
 如需要添加一些新的物品/舰娘，或者单纯想问问或者灌水，可以前往[discussions](https://github.com/misaka10843/ShinColle/discussions)！
 
-## 预发布版的问题测试情况 
+如需要体验原配的舰娘语音(虽然很多深海舰无法实装)，您可以在[这里](https://github.com/misaka10843/ShinColle/pull/8)，点击`检查->细节`即可下载到最新的语音版jar
+
+## 正式版的问题测试情况 
 
 |问题|通过状态|测试端|备注|
 |  :----:  | :----:  |  :----:  | :----:  |
-攻击问题|✅|本地游戏|Y轴角度太大会出现无法命中情况|
-图鉴不显示|✅|本地游戏|简单测试|
-舰娘在捡起物品时可能造成复制|✅|本地游戏|[@KCFindstr](https://github.com/KCFindstr) 修复，简单测试|
-攻击表情修复|❓|暂未测试|并不知道具体问题|
-深海书显示一半|❌|暂未测试|不知道具体原因|
+[攻击问题](https://github.com/misaka10843/ShinColle/pull/2)|✅|本地游戏|Y轴角度太大会出现无法命中情况|
+[图鉴不显示](https://github.com/misaka10843/ShinColle/pull/2)|✅|本地游戏|简单测试|
+[舰娘在捡起物品时可能造成复制](https://github.com/misaka10843/ShinColle/pull/3#issuecomment-1134689839)|✅|本地游戏|[@KCFindstr](https://github.com/KCFindstr) 修复，简单测试|
+[捡他人的舰娘会循环物品拾取音效](https://github.com/misaka10843/ShinColle/issues/9)|✅|多人游戏|简单测试|
+[攻击表情修复](https://github.com/misaka10843/ShinColle/pull/2)|❓|暂未测试/已修改|并不知道具体问题|
+深海书显示一半|❌|暂未修复|不知道具体原因|
+[Boss无法在玩家死亡后清除](https://github.com/misaka10843/ShinColle/issues/6)|❌|暂未修复|等待大佬PR|
+
+## 预发布版的一些相关事项
 
 注意！这是我们暂时合并了**修复图鉴不显示、攻击问题与攻击表情修复**的jar，
 
