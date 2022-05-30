@@ -474,35 +474,34 @@ public class BasicEntityItem extends Entity {
                                 }
                             }
                         }
-                        //ship egg w/o tag
-                        else {
-                            player.inventory.addItemStackToInventory(itemstack);
-                        }
                     }
-                    //not ship spawn egg
+                    //ship egg w/o tag
                     else {
                         player.inventory.addItemStackToInventory(itemstack);
                     }
                 }
-
-                //play pick sound
-                if (!this.isSilent() && !NeedJudge) {
-
-                    this.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
-                }
-            } else {
-                if (pid1.equals(pid2)) {
-                    this.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                //not ship spawn egg
+                    else{
+                    player.inventory.addItemStackToInventory(itemstack);
                 }
             }
-        }//end delay = 0
 
-        if (itemstack.getCount() <= 0) {
-            this.setDead();
-        }
-    }//end server side
+            //play pick sound
+            if (!this.isSilent() && !NeedJudge) {
 
-}
+                this.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+            }
+        } else {
+            if (pid1.equals(pid2)) {
+                this.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+            }//end delay = 0
+
+            if (itemstack.getCount() <= 0) {
+                this.setDead();
+            }
+        }//end server side
+
+    }
 
     @Override
     protected void readEntityFromNBT(NBTTagCompound nbt) {
