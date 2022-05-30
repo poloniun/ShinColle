@@ -437,7 +437,9 @@ public class BasicEntityItem extends Entity {
             //if can pick
             if (this.delayBeforeCanPickup <= 0) {
                 //申明需要判断是否播放音效的变量
-                String pid1 String pid2 boolean NeedJudge = false
+                String pid1;
+                String pid2;
+                boolean NeedJudge = false;
                 //is OP
                 if (EntityHelper.checkOP(player)) {
                     player.inventory.addItemStackToInventory(itemstack);
@@ -466,7 +468,7 @@ public class BasicEntityItem extends Entity {
                                 }
                             } else {
                                 //需要判断是否为所有者
-                                NeedJudge = true
+                                NeedJudge = true;
                                 if (pid1.equals(pid2)) {
                                     player.inventory.addItemStackToInventory(itemstack);
                                 }
