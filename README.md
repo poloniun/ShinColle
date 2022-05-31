@@ -20,8 +20,8 @@
 [图鉴不显示](https://github.com/misaka10843/ShinColle/pull/2)|✅|本地游戏|简单测试|
 [舰娘在捡起物品时可能造成复制](https://github.com/misaka10843/ShinColle/pull/3#issuecomment-1134689839)|✅|本地游戏|[@KCFindstr](https://github.com/KCFindstr) 修复，简单测试|
 [捡他人的舰娘会循环物品拾取音效](https://github.com/misaka10843/ShinColle/issues/9)|✅|多人游戏|简单测试|
+[深海日志文字显示一半](https://github.com/misaka10843/ShinColle/issues/12)|✅|多人/本地游戏|无|
 [攻击表情修复](https://github.com/misaka10843/ShinColle/pull/2)|❓|暂未测试/已修改|并不知道具体问题|
-[深海日志文字显示一半](https://github.com/misaka10843/ShinColle/issues/12)|❌|暂未修复|简中文件中有缺失导致显示不全|
 [Boss无法在玩家死亡后清除](https://github.com/misaka10843/ShinColle/issues/6)|❌|暂未修复|等待大佬PR|
 
 ## 预发布版的一些相关事项
