@@ -251,7 +251,7 @@ public class GuiDesk extends GuiContainer {
     this.textField.setTextColor(-1); // 點選文字框時文字顏色
     this.textField.setDisabledTextColour(-1); // 無點選文字框時文字顏色
     this.textField.setEnableBackgroundDrawing(true); // 畫出文字框背景
-    this.textField.setMaxStringLength(64); // 接受最大文字長度
+    this.textField.setMaxStringLength(128); // 接受最大文字長度
     this.textField.setEnabled(false);
     this.textField.setFocused(false);
   }
