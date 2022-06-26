@@ -23,6 +23,7 @@
 [深海日志文字显示一半](https://github.com/misaka10843/ShinColle/issues/12)|✅|多人/本地游戏|无|
 [攻击表情修复](https://github.com/misaka10843/ShinColle/pull/2)|❓|暂未测试/已修改|并不知道具体问题|
 [Boss无法在玩家死亡后清除](https://github.com/misaka10843/ShinColle/issues/6)|❌|暂未修复|等待大佬PR|
+[在方块上放在放置重型的怨念团块后可交互物品变成超深海热漩贴图](https://github.com/misaka10843/ShinColle/issues/14)|❌|暂未修复|等待大佬PR|
 
 ## 预发布版的一些相关事项
 
