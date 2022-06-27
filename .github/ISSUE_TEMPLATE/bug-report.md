@@ -30,7 +30,7 @@ Clearly describe the reproduction steps so that others can see the problem
 
 - 程序版本或action构件日期(Program Version or Action component date):
 - 系统(OS): <!-- example Windows 10.19042.844(see winver) / macOS Monterey 12 / Ubuntu 20.04.2 LTS -->
-- 是否使用了代理(Are agents used): <!--是(Yes)/否(No)-->
+- 是否使用了其他mod(Are other mod used): <!--是(Yes)/否(No)-->
 
 ### 🖼 截图(Screenshots)
 
