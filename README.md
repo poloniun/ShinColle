@@ -12,6 +12,8 @@
 
 如需要体验原配的舰娘语音(虽然很多深海舰无法实装)，您可以在[这里](https://github.com/misaka10843/ShinColle/pull/8)，点击`检查->细节`即可下载到最新的语音版jar
 
+在[这里](https://github.com/misaka10843/ShinColle/blob/mc-1.12.2/cfg-info.md)可以查看配置文件设置
+
 ## 正式版的问题测试情况 
 
 |问题|通过状态|测试端|备注|
