@@ -2,6 +2,14 @@
 
 此仓库是复刻自 Cappycot/ShinColle后使用GitHub actions自动编译程序编译jar，顺便将其他仓库中的优化与修复添加于此 
 
+```
+misaka10843 -fork-> Cappycot -fork-> PinkaLulan
+ ∧
+pull
+ |
+KCFindstr
+```
+
 这样您就可以无需自己编译，只需要跳转到[这里](https://github.com/misaka10843/ShinColle/actions)点击最新的构建下载即可qwq
 
 如果怕不稳定，您可以点击[这里](https://github.com/misaka10843/ShinColle/releases)下载最新版即可qwq
