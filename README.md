@@ -34,7 +34,8 @@ KCFindstr
 [攻击表情修复](https://github.com/misaka10843/ShinColle/pull/2)|❓|暂未测试/已修改|并不知道具体问题|
 [Boss无法在玩家死亡后清除](https://github.com/misaka10843/ShinColle/issues/6)|❌|暂未修复|等待大佬PR|
 [在方块上放在放置重型的怨念团块后可交互物品变成超深海热漩贴图](https://github.com/misaka10843/ShinColle/issues/14)|❌|暂未修复|等待大佬PR|
-[合成表与其他mod不兼容](https://github.com/misaka10843/ShinColle/issues/15)|❌|[有暂时解决方案](https://github.com/misaka10843/ShinColle/issues/15#issuecomment-1173290960)|等待大佬PR|
+[合成表与其他mod不兼容](https://github.com/misaka10843/ShinColle/issues/15)|✅|本地游戏|[@sddsd2332](https://github.com/sddsd2332) 修复，简单测试|
+[世界时间固定时，舰船AI报时语音循环播放](https://github.com/misaka10843/ShinColle/issues/16)|✅|本地游戏|[@sddsd2332](https://github.com/sddsd2332) 修复，简单测试|
 
 ## 预发布版的一些相关事项
 
