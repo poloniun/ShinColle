@@ -7,7 +7,9 @@ misaka10843 -fork-> Cappycot -fork-> PinkaLulan
  ∧
 pull
  |
-KCFindstr
+KCFindstr、sddsd2332
+
+Thank all the above personnel for their outstanding contributions!
 ```
 
 这样您就可以无需自己编译，只需要跳转到[这里](https://github.com/misaka10843/ShinColle/actions)点击最新的构建下载即可qwq
