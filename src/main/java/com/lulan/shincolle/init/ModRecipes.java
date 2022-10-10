@@ -95,7 +95,7 @@ public class ModRecipes
 		ItemStack shiptank2 = new ItemStack(ModItems.ShipTank, 1, 2);
 		ItemStack shiptank3 = new ItemStack(ModItems.ShipTank, 1, 3);
 		ItemStack recipepaper = new ItemStack(ModItems.RecipePaper);
-		
+
 		//SHAPELESS RECIPE
 		//abyssium material:
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "abyssium"), abyssiumStack, "ingotIron", grudeStack).setRegistryName(new ResourceLocation(Reference.MOD_ID, "abyssium")));
@@ -132,6 +132,13 @@ public class ModRecipes
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "ration26"), ration2, Items.COOKED_RABBIT, Items.GOLDEN_CARROT, grudeStack, "cookedRice").setRegistryName(new ResourceLocation(Reference.MOD_ID, "ration26")));
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "ration3"), ration3, ration2, ModBlocks.BlockGrudge, ModBlocks.BlockPolymetalGravel).setRegistryName(new ResourceLocation(Reference.MOD_ID, "ration3")));
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "ration4"), ration4, Items.SNOWBALL, Items.SNOWBALL, Items.SNOWBALL, Items.SNOWBALL, Items.MILK_BUCKET, ModItems.Grudge).setRegistryName(new ResourceLocation(Reference.MOD_ID, "ration4")));
+
+		//通过矿辞来获取牛奶
+		for (ItemStack milk : OreDictionary.getOres("listAllmilk", false)) {
+			milk = size(milk, 1);
+			ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "ration4"), ration4, Items.SNOWBALL, Items.SNOWBALL, Items.SNOWBALL, Items.SNOWBALL, milk, ModItems.Grudge).setRegistryName(new ResourceLocation(Reference.MOD_ID, "ration6")));
+		}
+
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "ration5"), ration5, ration4, ModBlocks.BlockGrudge).setRegistryName(new ResourceLocation(Reference.MOD_ID, "ration5")));
 		//xp item
 		ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(new ResourceLocation(Reference.MOD_ID, "modern_kit"), modernKit, kaitaiHammerAll, wrench, grudeXPBlock, grudeXPBlock, grudeXPBlock, grudeXPBlock).setRegistryName(new ResourceLocation(Reference.MOD_ID, "modern_kit")));
@@ -226,5 +233,14 @@ public class ModRecipes
 		ForgeRegistries.RECIPES.register(new ShapedOreRecipe(new ResourceLocation(Reference.MOD_ID, "grudge_xp_block"), grudeXPBlock,"xxx","xxx","xxx",'x',grudeXPStack).setRegistryName(new ResourceLocation(Reference.MOD_ID, "grudge_xp_block")));
 	}
 
-	
+
+	public static ItemStack size(ItemStack stack, int size) {
+		if (size <= 0 || stack.isEmpty()) {
+			return ItemStack.EMPTY;
+		}
+		ItemStack ret = stack.copy();
+		ret.setCount(size);
+		return ret;
+	}
+
 }

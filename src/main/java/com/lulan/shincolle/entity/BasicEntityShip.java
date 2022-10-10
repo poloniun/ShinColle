@@ -2242,7 +2242,7 @@ public abstract class BasicEntityShip extends EntityTameable implements IShipCan
         	}//end every 8 ticks
         	
         	//play timekeeping sound
-        	if (!this.isMorph && ConfigHandler.timeKeeping && this.getStateFlag(ID.F.TimeKeeper) && this.isEntityAlive())
+        	if (!this.isMorph && ConfigHandler.timeKeeping && this.getStateFlag(ID.F.TimeKeeper) && this.isEntityAlive() && this.world.getGameRules().getBoolean("doDaylightCycle"))
         	{
         		int checkHour = getWorldHourTime();
         		if (checkHour >= 0) playTimeSound(checkHour);
