@@ -24,6 +24,8 @@ Thank all the above personnel for their outstanding contributions!
 
 在[这里](https://github.com/misaka10843/ShinColle/blob/mc-1.12.2/cfg-info.md)可以查看配置文件设置
 
+请注意！在市面上1.12.2的搬运实体类型的Mod中，本人测试只通过了[进入水桶](https://www.mcmod.cn/class/2192.html)这个Mod，如果使用其他Mod可能会导致一些问题！
+
 ## 正式版的问题测试情况 
 
 |问题|通过状态|测试端|备注|
