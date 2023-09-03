@@ -2,6 +2,10 @@
 
 此仓库是复刻自 Cappycot/ShinColle后使用GitHub actions自动编译程序编译jar，顺便将其他仓库中的优化与修复添加于此 
 
+当前此仓库仅修复仅开启此mod下的重大bug（并不会主动修复与其他mod兼容的问题），虽然也可以在issue中提出其他的bug，但是并不会主动修复（因为版本对于现在来说太老了，并没有过多的维护价值）
+
+此仓库预计只会支持到mojang发布1.22.2+的时候，之后就算有重大的bug也并不会修复了
+
 ```
 misaka10843 -fork-> Cappycot -fork-> PinkaLulan
  ∧
