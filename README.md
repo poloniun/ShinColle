@@ -1,3 +1,10 @@
+> [!NOTE]
+> 在没有严重bug的情况下，本仓库原则上是不会更新任何东西的，如果有任何的问题，请在[mcmod](https://www.mcmod.cn/class/412.html)或者本仓库的Issues中进行反馈
+> 
+> （在mcmod中反馈时记得在前面添加 @[misaka10843](https://center.mcmod.cn/289697/)，这样我会在浏览mod页面时第一时间搜索到）
+>
+> 使用此mod时请不要使用任何可以搬运实体的mod搬运舰娘，因为可能会导致舰娘AI出现问题（真的不好查到底是哪里的问题）
+
 # Shin Colle
 
 此仓库是复刻自 Cappycot/ShinColle后使用GitHub actions自动编译程序编译jar，顺便将其他仓库中的优化与修复添加于此 
