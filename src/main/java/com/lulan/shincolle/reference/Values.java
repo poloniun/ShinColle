@@ -61,7 +61,7 @@ public class Values
 		put((int)ID.ShipClass.CANE,               new float[] {62F,  15F, 0.19F,  1.0F, 0.42F, 9F,  0.5F,  0.42F, 0.22F, 0.56F, 0.84F, 0.5F});
 		//carrier                                              HP    ATK  DEF     SPD   MOV    HIT  HP     ATK    DEF    SPD    MOV    HIT
 //		put((int)ID.ShipClass.LightCarrierNU,     new float[] {65F,  20F, 0.20F,  0.7F, 0.32F, 14F, 0.52F, 0.45F, 0.22F, 0.5F,  0.64F, 0.6F});
-		put((int)ID.ShipClass.CVWO,               new float[] {85F,  25F, 0.21F,  1.0F, 0.36F, 16F, 0.65f, 0.6F,  0.23F, 0.6F,  0.72F, 0.6F});
+		put((int)ID.ShipClass.CVWO,               new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 		//battleship
 		put((int)ID.ShipClass.BBRU,               new float[] {95F,  30F, 0.30F,  1.0F, 0.32F, 12F, 0.85F, 0.65F, 0.27F, 0.63F, 0.66F, 0.5F});
 		put((int)ID.ShipClass.BBTA,               new float[] {84F,  19F, 0.23F,  1.2F, 0.42F, 10F, 0.65F, 0.55F, 0.24F, 0.7F,  0.84F, 0.5F});
@@ -73,19 +73,19 @@ public class Values
 		put((int)ID.ShipClass.SSYO,               new float[] {36F,  30F, 0.10F,  0.8F, 0.3F,  5F,  0.33F, 0.7F,  0.16F, 0.7F,  0.6F,  0.3F});
 		put((int)ID.ShipClass.SSSO,               new float[] {34F,  38F, 0.12F,  0.8F, 0.28F, 5.5F,0.3F,  0.8F,  0.18F, 0.7F,  0.6F,  0.3F});
 		//demon                                                HP    ATK  DEF     SPD   MOV    HIT  HP     ATK    DEF    SPD    MOV    HIT
-		put((int)ID.ShipClass.IsolatedHime,       new float[] {225F, 13F, 0.34F,  0.9F, 0.22F, 24F, 1.3F,  0.4F,  0.29F, 0.6F,  0.44F, 0.8F});
+		put((int)ID.ShipClass.IsolatedHime,       new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 //		put((int)ID.ShipClass.LightCruiserDemon,  new float[] {130F, 30F, 0.25F,  1.0F, 0.45F, 13F, 0.8F,  0.65F, 0.25F, 0.6F,  0.9F,  0.55F});
 		//hime
 //		put((int)ID.ShipClass.AirdefenseHime,     new float[] {120F, 30F, 0.35F,  1.0F, 0.5F,  12F, 0.8F,  0.7F,  0.3F,  0.6F,  1F,    0.5F});
-		put((int)ID.ShipClass.AirfieldHime,       new float[] {240F, 16F, 0.32F,  1.0F, 0.3F,  26F, 1.2F,  0.45F, 0.28F, 0.6F,  0.6F,  0.8F});
+		put((int)ID.ShipClass.AirfieldHime,       new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 //		put((int)ID.ShipClass.AnchorageHime,      new float[] {150F, 19F, 0.32F,  0.9F, 0.3F,  23F, 0.95F, 0.5F,  0.28F, 0.6F,  0.6F,  0.8F});
 //		put((int)ID.ShipClass.ArmoredCarrierHime, new float[] {200F, 34F, 0.35F,  1.0F, 0.42F, 20F, 0.9F,  0.73F, 0.3F,  0.63F, 0.84F, 0.7F});
 		put((int)ID.ShipClass.BBHime,             new float[] {220F, 42F, 0.40F,  1.0F, 0.4F,  16F, 1.0F,  0.8F,  0.32F, 0.73F, 0.8F,  0.6F});
-		put((int)ID.ShipClass.CVHime,             new float[] {180F, 40F, 0.28F,  1.0F, 0.45F, 22F, 0.85F, 0.75F, 0.26F, 0.62F, 0.85F, 0.7F});
+		put((int)ID.ShipClass.CVHime,             new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 		put((int)ID.ShipClass.DDHime,             new float[] {90F,  22F, 0.20F,  1.0F, 0.52F, 12F, 0.55F, 0.5F,  0.22F, 0.6F,  1F,    0.5F});
-		put((int)ID.ShipClass.HarbourHime,        new float[] {260F, 14F, 0.36F,  0.8F, 0.2F,  24F, 1.35F, 0.4F,  0.3F,  0.6F,  0.4F,  0.8F});
-		put((int)ID.ShipClass.MidwayHime,         new float[] {350F, 22F, 0.45F,  0.8F, 0.25F, 30F, 1.5F,  0.5F,  0.34F, 0.6F,  0.4F,  0.8F});
-		put((int)ID.ShipClass.NorthernHime,       new float[] {210F, 13F, 0.30F,  0.8F, 0.32F, 22F, 1.15F, 0.35F, 0.27F, 0.6F,  0.64F, 0.8F});
+		put((int)ID.ShipClass.HarbourHime,        new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
+		put((int)ID.ShipClass.MidwayHime,         new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
+		put((int)ID.ShipClass.NorthernHime,       new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 //		put((int)ID.ShipClass.SeaplaneHime,       new float[] {170F, 24F, 0.25F,  1.0F, 0.45F, 18F, 1F,    0.6F,  0.25F, 0.63F, 0.9F,  0.65F});
 //		put((int)ID.ShipClass.SouthernHime,       new float[] {170F, 35F, 0.34F,  1.0F, 0.3F,  20F, 1F,    0.73F, 0.29F, 0.63F, 0.6F,  0.7F});
 		put((int)ID.ShipClass.SSHime,             new float[] {75F,  45F, 0.15F,  1.0F, 0.3F,  7.5F,0.5F,  0.9F,  0.2F,  0.7F,  0.6F,  0.4F});
@@ -97,7 +97,7 @@ public class Values
 		//water demon                                          HP    ATK  DEF     SPD   MOV    HIT  HP     ATK    DEF    SPD    MOV    HIT
 //		put((int)ID.ShipClass.AnchorageWD,        new float[] {230F, 28F, 0.35F,  1.0F, 0.35F, 26F, 1.35F, 0.6F,  0.3F,  0.7F,  0.7F,  1F});
 //		put((int)ID.ShipClass.BattleshipWD,       new float[] {280F, 50F, 0.45F,  1.0F, 0.42F, 21F, 1.1F,  1F,    0.34F, 0.85F, 0.84F, 0.7F});
-		put((int)ID.ShipClass.CVWD,               new float[] {190F, 45F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
+		put((int)ID.ShipClass.CVWD,               new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 //		put((int)ID.ShipClass.HarbourWD,          new float[] {300F, 35F, 0.45F,  1.0F, 0.35F, 29F, 1.5F,  0.63F, 0.34F, 0.7F,  0.7F,  1F});
 //		put((int)ID.ShipClass.DestroyerWD,        new float[] {150F, 23F, 0.25F,  1.0F, 0.55F, 15F, 0.9F,  0.8F,  0.3F,  0.7F,  1F,    0.6F});
 		//hostile ship                                         
@@ -123,8 +123,8 @@ public class Values
 		put((int)ID.ShipClass.SSU511,             new float[] {28F,  30F, 0.07F,  0.8F, 0.3F,  10F, 0.3F,  0.7F,  0.13F, 0.7F,  0.6F,  0.4F});
 		put((int)ID.ShipClass.SSRo500,            new float[] {32F,  32F, 0.10F,  0.8F, 0.3F,  11F, 0.33F, 0.75F, 0.16F, 0.7F,  0.6F,  0.4F});
 		//carrier
-		put((int)ID.ShipClass.CVKaga,             new float[] {70F,  22F, 0.21F,  1.0F, 0.34F, 16F, 0.65f, 0.6F,  0.23F, 0.6F,  0.72F, 0.6F});
-		put((int)ID.ShipClass.CVAkagi,            new float[] {75F,  22F, 0.20F,  1.0F, 0.32F, 16F, 0.65f, 0.6F,  0.23F, 0.6F,  0.72F, 0.6F});
+		put((int)ID.ShipClass.CVKaga,             new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
+		put((int)ID.ShipClass.CVAkagi,            new float[] {300F, 50F, 0.40F,  1.0F, 0.42F, 25F, 1F,    0.95F, 0.32F, 0.75F, 0.84F, 0.8F});
 		
 	}});
 	
@@ -686,7 +686,7 @@ public class Values
 		put((int)ID.EquipType.AIR_B_HI + (int)ID.EquipSubID.AIRCRAFT_BHELL * 100,     	new float[]{0F,  0F,  0F,  5F,  14F, 0F,   0F,   -0.25F, 2.5F, 0.08F, 0F,    0F,    0F,    6F,  12F, 0F,   0F,   0F,   0F,   0F,   0F});
 		put((int)ID.EquipType.AIR_B_HI + (int)ID.EquipSubID.AIRCRAFT_BHELLK * 100,    	new float[]{0F,  0F,  0F,  7F,  16F, 0F,   0.05F,-0.30F, 2.5F, 0.12F, 0F,    0F,    0F,    8F,  16F, 0F,   0F,   0F,   0F,   0F,   0F});
 		put((int)ID.EquipType.AIR_B_HI + (int)ID.EquipSubID.AIRCRAFT_BLAND * 100,    	new float[]{0F,  0F,  0F,  8F,  18F, 0F,   0.06F,-0.35F, 3F,   0.14F, 0F,    0F,    0F,    10F, 20F, 0F,   0F,   0F,   0F,   0F,   0F});
-		put((int)ID.EquipType.AIR_B_HI + (int)ID.EquipSubID.AIRCRAFT_BLANDA * 100,    	new float[]{0F,  0F,  0F,  9F,  20F, 0F,   0.08F,-0.38F, 3.5F, 0.16F, 0F,    0F,    0F,    12F, 24F, 0F,   0F,   0F,   0F,   0F,   0F});
+		put((int)ID.EquipType.AIR_B_HI + (int)ID.EquipSubID.AIRCRAFT_BLANDA * 100,    	new float[]{120F,20F,  20F,  120F,  160F, 0.20F,   2.5F,0F, 6.0F, 0F,  0F,    0.3F,    0.15F,    160F, 40F, 0.2F,   0.1F,   0.1F,   0.1F,   0.1F,   0.1F});
 		//Recon aircraft
 		put((int)ID.EquipType.AIR_R_LO + (int)ID.EquipSubID.AIRCRAFT_R * 100,         	new float[]{0F,  1F,  1F,  1F,  1F,  0.03F,0.02F,-0.10F, 3.5F, 0.03F, 0F,    0F,    0.10F, 8F,  4F,  0.08F,0F,   0F,   0F,   0F,   0F});
 		put((int)ID.EquipType.AIR_R_HI + (int)ID.EquipSubID.AIRCRAFT_RFLYFISH * 100,  	new float[]{0F,  2F,  2F,  2F,  2F,  0.06F,0.04F,-0.16F, 5.5F, 0.05F, 0F,    0F,    0.15F, 12F, 8F,  0.15F,0F,   0F,   0F,   0F,   0F});
@@ -944,7 +944,7 @@ public class Values
 	public static final Map<Integer, float[]> MoraleAttrs = Collections.unmodifiableMap(new HashMap<Integer, float[]>()
 	{{
 		//                 HP,  ATK_L  ATK_H  ATK_AL ATK_AH DEF   SPD,  MOV    HIT,  CRI   DHIT  THIT  MISS  AA    ASM   DODGE  XP     GRU    AMMO   HPRES   KB
-		put(0, new float[]{0F,  1.25F, 1.25F, 1.25F, 1.25F, 0.2F, 1.4F, 0.15F, 4F,   1.2F, 1.2F, 1.2F, 1.5F, 1.5F, 1.5F, 0.25F, 0.5F,  0.5F,  0.5F,  0.5F,   0.25F});
+		put(0, new float[]{0F,  1.4F,  1.4F,  1.4F,  1.4F,  0.3F, 1.5F, 0.2F,  4F,   1.2F, 1.2F, 1.2F, 1.5F, 1.5F, 1.5F, 0.25F, 0.5F,  0.5F,  0.5F,  0.5F,   0.25F});
 		put(1, new float[]{0F,  1.1F,  1.1F,  1.1F,  1.1F,  0.1F, 1.2F, 0.08F, 2F,   1.1F, 1.1F, 1.1F, 1.25F,1.25F,1.25F,0.12F, 0.25F, 0.25F, 0.25F, 0.25F,  0.15F});
 		put(2, new float[]{0F,  0.9F,  0.9F,  0.9F,  0.9F,  -0.1F,0.8F, -0.08F,-2F,  0.9F, 0.9F, 0.9F, 0.75F,0.75F,0.75F,-0.12F,-0.25F,-0.25F,-0.25F,-0.25F, -0.1F});
 		put(3, new float[]{0F,  0.75F, 0.75F, 0.75F, 0.75F, -0.2F,0.6F, -0.15F,-4F,  0.8F, 0.8F, 0.8F, 0.5F, 0.5F, 0.5F, -0.25F,-0.5F, -0.5F, -0.5F, -0.5F,  -0.2F});
