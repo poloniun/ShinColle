@@ -1,18 +1,28 @@
 buildscript {
     repositories {
+        maven {
+            name = "aliyun"
+            url "https://maven.aliyun.com/repository/public/"
+        }
+        maven { url = "https://cyankoton.github.io/maven" }
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            //url = "https://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net"
         }
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
     }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
+	dependencies {
+		classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {changing = true}
+	}
+  
+}
+plugins {
+    id 'java-library'    // JAVA 依赖库
 }
 apply plugin: 'forge'
 sourceCompatibility = 1.8
@@ -24,8 +34,7 @@ compileJava.options.encoding = 'UTF-8'	//for win7 + zh_TW
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"  
-    assetDir = "eclipse//.."
-    runDir = "eclipse//.."
+    runDir = "eclipse"
 }
 
 dependencies {
@@ -41,7 +50,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-    compile files('libs/*.jar')
+    //compile files('libs/*.jar')
+    compileOnly fileTree("DepMods")
 
 }
 
